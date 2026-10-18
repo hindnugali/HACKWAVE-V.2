@@ -377,7 +377,7 @@ footer a{color:var(--paper)}
       <button class="box" type="button" aria-expanded="false" style="--c:var(--coral)">
         <div class="inside">
           <h3>CTF competition</h3>
-          <p>Solve security puzzles against the clock as a team, and compete for a share of 15,000 SAR.</p>
+          <p>Solve security puzzles against the clock as a team, and compete for a share of 4,500 SAR.</p>
           <p class="ar" lang="ar">مسابقة التقط العلم على مدى ست ساعات</p>
         </div>
         <span class="door l"><span class="bar"></span><span class="tag">CTF</span></span>
@@ -449,13 +449,13 @@ footer a{color:var(--paper)}
 <!-- PRIZES -->
 <section class="sec" id="prizes" style="padding-top:40px;background:var(--ink);z-index:1">
   <div class="wrap">
-    <h2 class="h2">15,000 SAR in the stack</h2>
+    <h2 class="h2">4,500 SAR in the stack</h2>
     <span class="h2-ar" lang="ar">جوائز مسابقة CTF النهائية</span>
     <p class="lede">Prizes go to the top three teams in the final CTF.</p>
     <div class="stacks" id="stacks">
-      <div class="stack second"><div class="cap"><strong>5,000 SAR</strong><span>Second place</span></div></div>
-      <div class="stack first"><div class="cap"><strong>7,000 SAR</strong><span>First place</span></div></div>
-      <div class="stack third"><div class="cap"><strong>3,000 SAR</strong><span>Third place</span></div></div>
+      <div class="stack second"><div class="cap"><strong>1,500 SAR</strong><span>Second place</span></div></div>
+      <div class="stack first"><div class="cap"><strong>2,000 SAR</strong><span>First place</span></div></div>
+      <div class="stack third"><div class="cap"><strong>1,000 SAR</strong><span>Third place</span></div></div>
     </div>
   </div>
 </section>
@@ -471,7 +471,7 @@ footer a{color:var(--paper)}
         <span class="go">Register as a visitor</span>
       </a>
       <a class="ticket comp" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=G9lTtMFqYUu4uF5l5CIjPyAFNRrLdspPla2Nd7F7aulURVRFWUU1SVlTQ09XNjdLRFROMktRTFRFVi4u" target="_blank" rel="noopener" id="regComp">
-        <div><h3>Competitor</h3><p>Enter the CTF as a team and compete for a share of 15,000 SAR.</p></div>
+        <div><h3>Competitor</h3><p>Enter the CTF as a team and compete for a share of 4,500 SAR.</p></div>
         <span class="go">Register your team</span>
       </a>
       <a class="ticket mock" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=G9lTtMFqYUu4uF5l5CIjPyAFNRrLdspPla2Nd7F7aulUQkJQTUFaT0JXRlIwT0dTUlVSRjZWSDkxVC4u" target="_blank" rel="noopener" id="regMock">
@@ -719,7 +719,7 @@ addEventListener('scroll', onRoute, {passive:true}); addEventListener('resize', 
 
 /* ---------------- prize stacks ---------------- */
 const stacks = $('#stacks');
-[['first',7],['second',5],['third',3]].forEach(([cls, n]) => {
+[['first',4],['second',3],['third',2]].forEach(([cls, n]) => {
   const st = stacks.querySelector('.'+cls);
   for (let i = 0; i < n; i++) { const u = document.createElement('div'); u.className = 'unit'; u.style.transitionDelay = (i*90 + (cls==='first'?0:cls==='second'?40:80)) + 'ms'; st.appendChild(u); }
 });
