@@ -289,7 +289,6 @@ footer a{color:var(--paper)}
     <li><a href="#about">About</a></li>
     <li><a href="#onboard">Program</a></li>
     <li><a href="#route">Schedule</a></li>
-    <li><a href="#prizes">Prizes</a></li>
     <li><a href="#crew">Partners</a></li>
   </ul>
   <a href="#register" class="cta">Register</a>
@@ -377,7 +376,7 @@ footer a{color:var(--paper)}
       <button class="box" type="button" aria-expanded="false" style="--c:var(--coral)">
         <div class="inside">
           <h3>CTF competition</h3>
-          <p>Solve security puzzles against the clock as a team, and compete for a share of 4,500 SAR.</p>
+          <p>Solve security puzzles against the clock as a team.</p>
           <p class="ar" lang="ar">مسابقة التقط العلم على مدى ست ساعات</p>
         </div>
         <span class="door l"><span class="bar"></span><span class="tag">CTF</span></span>
@@ -446,20 +445,6 @@ footer a{color:var(--paper)}
       </div>
 </section>
 
-<!-- PRIZES -->
-<section class="sec" id="prizes" style="padding-top:40px;background:var(--ink);z-index:1">
-  <div class="wrap">
-    <h2 class="h2">4,500 SAR in the stack</h2>
-    <span class="h2-ar" lang="ar">جوائز مسابقة CTF النهائية</span>
-    <p class="lede">Prizes go to the top three teams in the final CTF.</p>
-    <div class="stacks" id="stacks">
-      <div class="stack second"><div class="cap"><strong>1,500 SAR</strong><span>Second place</span></div></div>
-      <div class="stack first"><div class="cap"><strong>2,000 SAR</strong><span>First place</span></div></div>
-      <div class="stack third"><div class="cap"><strong>1,000 SAR</strong><span>Third place</span></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- REGISTER -->
 <section class="sec register" id="register">
   <div class="wrap">
@@ -471,7 +456,7 @@ footer a{color:var(--paper)}
         <span class="go">Register as a visitor</span>
       </a>
       <a class="ticket comp" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=G9lTtMFqYUu4uF5l5CIjPyAFNRrLdspPla2Nd7F7aulURVRFWUU1SVlTQ09XNjdLRFROMktRTFRFVi4u" target="_blank" rel="noopener" id="regComp">
-        <div><h3>Competitor</h3><p>Enter the CTF as a team and compete for a share of 4,500 SAR.</p></div>
+        <div><h3>Competitor</h3><p>Enter the CTF as a team and test your skills against the clock.</p></div>
         <span class="go">Register your team</span>
       </a>
       <a class="ticket mock" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=G9lTtMFqYUu4uF5l5CIjPyAFNRrLdspPla2Nd7F7aulUQkJQTUFaT0JXRlIwT0dTUlVSRjZWSDkxVC4u" target="_blank" rel="noopener" id="regMock">
@@ -717,14 +702,6 @@ function onRoute(){
   stops.forEach(s => s.classList.toggle('on', s.offsetLeft - pl <= shipX + 30));
 }
 addEventListener('scroll', onRoute, {passive:true}); addEventListener('resize', onRoute); onRoute();
-
-/* ---------------- prize stacks ---------------- */
-const stacks = $('#stacks');
-[['first',4],['second',3],['third',2]].forEach(([cls, n]) => {
-  const st = stacks.querySelector('.'+cls);
-  for (let i = 0; i < n; i++) { const u = document.createElement('div'); u.className = 'unit'; u.style.transitionDelay = (i*90 + (cls==='first'?0:cls==='second'?40:80)) + 'ms'; st.appendChild(u); }
-});
-new IntersectionObserver(([e], o) => { if (e.isIntersecting) { stacks.classList.add('landed'); o.disconnect(); } }, {threshold:.05}).observe(stacks);
 
 /* ---------------- ship sails in ---------------- */
 const sea = $('#sea');
