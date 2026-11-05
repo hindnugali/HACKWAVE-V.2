@@ -146,7 +146,7 @@ section{position:relative}
 .box-note{color:var(--muted);font-size:14px;margin-top:14px}
 
 /* ---------- route (pinned horizontal timeline) ---------- */
-.route{margin-bottom:-22vh;height:340vh;background:var(--ink)}
+.route{margin-bottom:-22vh;height:700vh;background:var(--ink)}
 .route-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding-top:60px}
 .route-head{padding-inline:var(--gutter)}
 .route-head .h2{margin:0}
@@ -161,6 +161,7 @@ section{position:relative}
 .stop p{margin:0;color:var(--muted);font-size:15.5px;max-width:30ch}
 .stop .ar{color:var(--lav);opacity:.8;font-size:15px;margin-top:6px;text-align:left}
 .stop.on .t{opacity:1;color:var(--amber)}
+.stop.key h3{color:var(--coral)}
 .stop.on .pt{background:var(--amber);border-color:var(--amber);box-shadow:0 0 22px var(--amber)}
 .ship{position:absolute;top:84px;left:var(--gutter);width:64px;height:30px;transition:none;z-index:2}
 .route-date{color:var(--muted);font-size:15px;margin:8px 0 0}
@@ -240,6 +241,12 @@ section{position:relative}
 
 
 /* ---------- partners: the ship ---------- */
+.main-sponsor{margin-top:28px;display:inline-flex;flex-direction:column;gap:8px;padding:22px 30px;border:2px solid var(--amber);background:repeating-linear-gradient(90deg,rgba(255,181,71,.07) 0 3px,transparent 3px 16px)}
+.ms-label{font-family:var(--stencil);font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--amber)}
+.ms-name{font-family:var(--display);font-weight:900;font-size:clamp(40px,6vw,76px);line-height:1;color:var(--paper)}
+.ms-name span{font-size:.6em;color:var(--lav);margin-left:14px;font-weight:700}
+.ctr-logo{gap:10px;color:#fff!important}
+.ctr-logo img{height:auto;width:auto;max-height:44px;max-width:88%;display:block}
 .crew{padding-top:clamp(80px,12vh,140px);overflow:hidden;background:linear-gradient(180deg,var(--ink) 0%,#101a42 70%)}
 .crew-head .h2-ar{margin-bottom:10px}
 .sea{position:relative;padding:40px 0 0}
@@ -289,6 +296,7 @@ footer a{color:var(--paper)}
     <li><a href="#about">About</a></li>
     <li><a href="#onboard">Program</a></li>
     <li><a href="#route">Schedule</a></li>
+    <li><a href="#prizes">Prizes</a></li>
     <li><a href="#crew">Partners</a></li>
   </ul>
   <a href="#register" class="cta">Register</a>
@@ -347,7 +355,7 @@ footer a{color:var(--paper)}
       <dl>
         <dt>Port of loading</dt><dd>University of Jeddah, Conference Hall</dd>
         <dt>Date</dt><dd>Thursday, 12 November 2026</dd>
-        <dt>Hours</dt><dd>8:30 AM to 6:00 PM</dd>
+        <dt>Hours</dt><dd>8:30 AM to 4:00 PM</dd>
         <dt>Consignor</dt><dd>University of Jeddah, Cybersecurity Academy, PreHack</dd>
         <dt>Cargo</dt><dd>CTF, Workshops, Mock Interviews, Panels, Outreach</dd>
         <dt>Edition</dt><dd>Second (annual)</dd>
@@ -376,8 +384,8 @@ footer a{color:var(--paper)}
       <button class="box" type="button" aria-expanded="false" style="--c:var(--coral)">
         <div class="inside">
           <h3>CTF competition</h3>
-          <p>Solve security puzzles against the clock as a team.</p>
-          <p class="ar" lang="ar">مسابقة التقط العلم على مدى ست ساعات</p>
+          <p>Solve security puzzles against the clock as a team, and compete for a share of 15,000 SAR.</p>
+          <p class="ar" lang="ar">مسابقة التقط العلم</p>
         </div>
         <span class="door l"><span class="bar"></span><span class="tag">CTF</span></span>
         <span class="door r"><span class="bar"></span></span>
@@ -434,14 +442,37 @@ footer a{color:var(--paper)}
     <div class="track" id="track">
       <div class="lane"></div><div class="lane-fill" id="laneFill"></div>
       <svg class="ship" id="ship" viewBox="0 0 64 30" aria-hidden="true"><path d="M2 18h60l-8 10H10z" fill="#FFB547"/><rect x="12" y="8" width="10" height="10" fill="#FF6A4D"/><rect x="23" y="8" width="10" height="10" fill="#4F8CFF"/><rect x="34" y="8" width="10" height="10" fill="#C9B8FF"/><rect x="23" y="0" width="10" height="8" fill="#8A3FFC"/><rect x="47" y="4" width="6" height="14" fill="#EEE9FF"/></svg>
-      <div class="stop"><span class="t">8:30</span><span class="pt"></span><h3>Doors open</h3><p>Check in and meet the exhibitors.</p><p class="ar" lang="ar">فتح الأبواب واستقبال الزوار</p></div>
-      <div class="stop"><span class="t">9:00</span><span class="pt"></span><h3>Opening</h3><p>Opening ceremony and the start of the program.</p><p class="ar" lang="ar">الافتتاح وبداية البرنامج</p></div>
-      <div class="stop"><span class="t">11:00</span><span class="pt"></span><h3>CTF begins</h3><p>The competition starts for registered teams.</p><p class="ar" lang="ar">انطلاق مسابقة CTF</p></div>
-      <div class="stop"><span class="t">11:00</span><span class="pt"></span><h3>Workshops</h3><p>Workshops run until 3:45 PM.</p><p class="ar" lang="ar">ورش العمل التقنية</p></div>
-      <div class="stop"><span class="t">11:00</span><span class="pt"></span><h3>Mock interviews</h3><p>Practice interviews run until 2:30 PM.</p><p class="ar" lang="ar">المقابلات الوظيفية التجريبية</p></div>
-      <div class="stop"><span class="t">4:30</span><span class="pt"></span><h3>Closing ceremony</h3><p>CTF winners announced and prizes awarded, until 5:00 PM.</p><p class="ar" lang="ar">حفل الختام وتوزيع الجوائز</p></div>
+      <div class="stop"><span class="t">8:30</span><span class="pt"></span><h3>Registration</h3><p>8:30 to 9:00 AM.</p><p class="ar" lang="ar" dir="rtl">التسجيل</p></div>
+      <div class="stop"><span class="t">9:00</span><span class="pt"></span><h3>Opening ceremony and keynote</h3><p>9:00 to 9:15 AM.</p><p class="ar" lang="ar" dir="rtl">حفل الافتتاح والكلمة الرئيسية</p></div>
+      <div class="stop"><span class="t">9:15</span><span class="pt"></span><h3>Agreements and partner recognition</h3><p>Signing of agreements and honoring our partners, 9:15 to 9:30 AM.</p><p class="ar" lang="ar" dir="rtl">توقيع اتفاقيات وتكريم الشركاء</p></div>
+      <div class="stop"><span class="t">9:30</span><span class="pt"></span><h3>Panel: Cybersecurity and digital supply chains</h3><p>9:30 to 10:00 AM.</p><p class="ar" lang="ar" dir="rtl">جلسة حوارية بعنوان (الأمن السيبراني وسلاسل الإمداد الرقمية)</p></div>
+      <div class="stop"><span class="t">10:00</span><span class="pt"></span><h3>Talk on logistics security</h3><p>10:00 to 10:30 AM.</p><p class="ar" lang="ar" dir="rtl">كلمة حول أمن اللوجستيات</p></div>
+      <div class="stop key"><span class="t">10:30</span><span class="pt"></span><h3>CTF begins</h3><p>The capture-the-flag competition starts and the challenges open.</p><p class="ar" lang="ar" dir="rtl">انطلاق مسابقة التقط العلم وبداية التحديات</p></div>
+      <div class="stop"><span class="t">10:30</span><span class="pt"></span><h3>Workshop: Phishing, Forensics &amp; Malware Reverse Engineering</h3><p>By Sirar by stc, 10:30 AM to 12:00 PM.</p><p class="ar" lang="ar" dir="rtl">ورشة عمل — شركة sirar by stc</p></div>
+      <div class="stop"><span class="t">10:30</span><span class="pt"></span><h3>Workshop: From a cyber gap to a logistics breakdown</h3><p>How do we stop the crisis? By JEDCO Jeddah Airports, 10:30 AM to 12:00 PM.</p><p class="ar" lang="ar" dir="rtl">ورشة عمل (من ثغرة سيبرانية إلى تعثّر لوجستي: كيف نوقف الأزمة؟) — شركة مطارات جدة</p></div>
+      <div class="stop"><span class="t">12:00</span><span class="pt"></span><h3>Break and Dhuhr prayer</h3><p>12:00 to 1:00 PM.</p><p class="ar" lang="ar" dir="rtl">استراحة وصلاة الظهر</p></div>
+      <div class="stop"><span class="t">1:00</span><span class="pt"></span><h3>Workshop: Cybersecurity in logistics</h3><p>How do we protect a chain that cannot afford to stop? By JEDCO Jeddah Airports, 1:00 to 2:00 PM.</p><p class="ar" lang="ar" dir="rtl">ورشة عمل (الأمن السيبراني في اللوجستيات: كيف نحمي سلسلة لا تحتمل التوقف؟) — شركة مطارات جدة</p></div>
+      <div class="stop"><span class="t">1:00</span><span class="pt"></span><h3>Workshop: Building Your Red Team Infrastructure from Scratch</h3><p>By Help AG, 1:00 to 2:00 PM.</p><p class="ar" lang="ar" dir="rtl">ورشة عمل — شركة Help AG</p></div>
+      <div class="stop"><span class="t">2:00</span><span class="pt"></span><h3>Workshop: Securing the Journey</h3><p>Cybersecurity in Logistics &amp; Transportation. By Bu'd (بُعد), 2:00 to 3:00 PM.</p><p class="ar" lang="ar" dir="rtl">ورشة عمل — شركة بُعد</p></div>
+      <div class="stop"><span class="t">2:00</span><span class="pt"></span><h3>Workshop: From incident to response</h3><p>Incident response in logistics security. By Savola Group, 2:00 to 3:00 PM.</p><p class="ar" lang="ar" dir="rtl">ورشة عمل (من الحادثة إلى الاستجابة في أمن اللوجستيات) — مجموعة صافولا</p></div>
+      <div class="stop"><span class="t">3:00</span><span class="pt"></span><h3>Winners announced</h3><p>CTF winners announced and prizes awarded, 3:00 to 3:30 PM.</p><p class="ar" lang="ar" dir="rtl">إعلان الفائزين والتكريم</p></div>
+      <div class="stop"><span class="t">4:00</span><span class="pt"></span><h3>Closing</h3><p>The convention closes at 4:00 PM.</p><p class="ar" lang="ar" dir="rtl">ختام الملتقى</p></div>
     </div>
       </div>
+</section>
+
+<!-- PRIZES -->
+<section class="sec" id="prizes" style="padding-top:40px;background:var(--ink);z-index:1">
+  <div class="wrap">
+    <h2 class="h2">15,000 SAR in the stack</h2>
+    <span class="h2-ar" lang="ar">جوائز مسابقة CTF النهائية</span>
+    <p class="lede">Prizes go to the top three teams in the final CTF.</p>
+    <div class="stacks" id="stacks">
+      <div class="stack second"><div class="cap"><strong>5,000 SAR</strong><span>Second place</span></div></div>
+      <div class="stack first"><div class="cap"><strong>7,000 SAR</strong><span>First place</span></div></div>
+      <div class="stack third"><div class="cap"><strong>3,000 SAR</strong><span>Third place</span></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- REGISTER -->
@@ -455,7 +486,7 @@ footer a{color:var(--paper)}
         <span class="go">Register as a visitor</span>
       </a>
       <a class="ticket comp" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=G9lTtMFqYUu4uF5l5CIjPyAFNRrLdspPla2Nd7F7aulURVRFWUU1SVlTQ09XNjdLRFROMktRTFRFVi4u" target="_blank" rel="noopener" id="regComp">
-        <div><h3>Competitor</h3><p>Enter the CTF as a team and test your skills against the clock.</p></div>
+        <div><h3>Competitor</h3><p>Enter the CTF as a team and compete for a share of 15,000 SAR.</p></div>
         <span class="go">Register your team</span>
       </a>
       <a class="ticket mock" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=G9lTtMFqYUu4uF5l5CIjPyAFNRrLdspPla2Nd7F7aulUQkJQTUFaT0JXRlIwT0dTUlVSRjZWSDkxVC4u" target="_blank" rel="noopener" id="regMock">
@@ -473,6 +504,10 @@ footer a{color:var(--paper)}
   <div class="wrap crew-head">
     <h2 class="h2" id="crewTitle">Our sponsors</h2>
     <span class="h2-ar" lang="ar">الرعاة</span>
+    <div class="main-sponsor">
+      <span class="ms-label">Main sponsor <span lang="ar">· الراعي الرئيسي</span></span>
+      <span class="ms-name">Luberef <span lang="ar">لوبريف</span></span>
+    </div>
   </div>
   <div class="sea" id="sea">
     <div class="vessel">
@@ -486,6 +521,7 @@ footer a{color:var(--paper)}
         <span class="ctr" style="--c:var(--blue)">OffSec</span>
         <span class="ctr" style="--c:var(--coral)">Altered Security</span>
         <span class="ctr" style="--c:#7CF06B">Hackviser</span>
+        <span class="ctr" style="--c:#4FD1E0">Dar Al-Omar</span>
       </div>
       <div class="hull"><span>HACKWAVE 2 · JEDDAH</span></div>
     </div>
@@ -701,6 +737,14 @@ function onRoute(){
   stops.forEach(s => s.classList.toggle('on', s.offsetLeft - pl <= shipX + 30));
 }
 addEventListener('scroll', onRoute, {passive:true}); addEventListener('resize', onRoute); onRoute();
+
+/* ---------------- prize stacks ---------------- */
+const stacks = $('#stacks');
+[['first',7],['second',5],['third',3]].forEach(([cls, n]) => {
+  const st = stacks.querySelector('.'+cls);
+  for (let i = 0; i < n; i++) { const u = document.createElement('div'); u.className = 'unit'; u.style.transitionDelay = (i*90 + (cls==='first'?0:cls==='second'?40:80)) + 'ms'; st.appendChild(u); }
+});
+new IntersectionObserver(([e], o) => { if (e.isIntersecting) { stacks.classList.add('landed'); o.disconnect(); } }, {threshold:.05}).observe(stacks);
 
 /* ---------------- ship sails in ---------------- */
 const sea = $('#sea');
